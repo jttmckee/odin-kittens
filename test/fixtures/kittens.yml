@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+jason:
+  name: Jason
+  age: 4
+  cuteness: 5
+  softness: 7
+
+hodja:
+  name: Hodja
+  age: 3
+  cuteness: 9
+  softness: 4

@@ -1,0 +1,15 @@
+
+<%= render partial: 'shared/errors', locals: {object: @kitten }%>
+<%= form_for @kitten do |f| %>
+<%= f.label :name, 'Name:' %>
+<%= f.text_field :name, class: 'form-control'%> <br>
+<%= f.label :age, 'Age in weeks:' %>
+<%= f.number_field :age, class: 'form-control' %> <br>
+<%= f.label :cuteness, 'Cuteness 1-10' %>
+<%= f.select :cuteness, options_for_select((1..10).to_a),
+  class: 'form-control' %>
+<%= f.label :softness, 'Softness 1-10' %>
+<%= f.select :softness, options_for_select((1..10).to_a,1),
+    class: 'form-control' %> <br>
+<%= f.submit kitten_action %>
+<% end %>

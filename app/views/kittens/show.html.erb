@@ -1,0 +1,7 @@
+<h1>About this kitten</h1>
+Kitten: <%= @kitten.name %>  <br>
+Age: <%= pluralize(@kitten.age,'week' )  %> old <br>
+Softness: <%= @kitten.softness %>/10 | Cuteness: <%= @kitten.cuteness %>/10 <br>
+<%= link_to 'Edit', edit_kitten_path(@kitten) %> |
+<%= link_to 'Delete', kitten_path(@kitten), method: 'delete' %> |
+<%= link_to 'All Kittens', kittens_path %>
