@@ -7,17 +7,27 @@ class KittensController < ApplicationController
   def create
     @kitten = Kitten.new(kitten_params)
     if @kitten.save
+      flash[:success] = 'Kitten Created!'
       redirect_to @kitten
     else
+      flash.now[:warning] = 'How hard is it to create a kitten??'
       render 'new'
     end
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.json {render json: @kitten}
+    end
   end
 
   def index
     @kittens = Kitten.all
+    respond_to do |format|
+      format.html
+      format.json {render json: @kittens}
+    end
   end
 
   def edit
